@@ -5,4 +5,6 @@ python train.py --name xl_landscape-0422  \
                 --label_nc 182 \
                 --no_instance \
                 --niter 300 \
+                --crop_size 512 \
+                --load_size 512 \
                 --tf_log
