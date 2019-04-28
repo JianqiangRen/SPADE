@@ -30,6 +30,7 @@ webpage = html.HTML(web_dir,
 
 # test
 for i, data_i in enumerate(dataloader):
+ 
     if i * opt.batchSize >= opt.how_many:
         break
 
@@ -38,7 +39,8 @@ for i, data_i in enumerate(dataloader):
     img_path = data_i['path']
     for b in range(generated.shape[0]):
         print('process image... %s' % img_path[b])
-        visuals = OrderedDict([('input_label', data_i['label'][b]),
+        visuals = OrderedDict([('real_image', data_i['image'][b]),
+                               ('input_label', data_i['label'][b]),
                                ('synthesized_image', generated[b])])
         visualizer.save_images(webpage, visuals, img_path[b:b + 1])
 

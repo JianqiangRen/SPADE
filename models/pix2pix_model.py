@@ -42,8 +42,7 @@ class Pix2PixModel(torch.nn.Module):
         input_semantics, real_image = self.preprocess_input(data)
 
         if mode == 'generator':
-            g_loss, generated = self.compute_generator_loss(
-                input_semantics, real_image)
+            g_loss, generated = self.compute_generator_loss(input_semantics, real_image)
             return g_loss, generated
         elif mode == 'discriminator':
             d_loss = self.compute_discriminator_loss(
@@ -160,7 +159,6 @@ class Pix2PixModel(torch.nn.Module):
         if not self.opt.no_vgg_loss:
             G_losses['VGG'] = self.criterionVGG(fake_image, real_image) \
                 * self.opt.lambda_vgg
-
         return G_losses, fake_image
 
     def compute_discriminator_loss(self, input_semantics, real_image):
@@ -194,7 +192,7 @@ class Pix2PixModel(torch.nn.Module):
                 KLD_loss = self.KLDLoss(mu, logvar) * self.opt.lambda_kld
 
         fake_image = self.netG(input_semantics, z=z)
-
+ 
         assert (not compute_kld_loss) or self.opt.use_vae, \
             "You cannot compute KLD loss if opt.use_vae == False"
 

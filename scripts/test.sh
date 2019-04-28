@@ -1,4 +1,4 @@
-python test.py --name xl_landscape-0422 \
+python test.py --name xl_landscape-0425 \
                 --dataset_mode custom \
                 --label_dir datasets/xueluo_landscope/val_label/ \
                 --image_dir datasets/xueluo_landscope/val_img/ \
@@ -8,4 +8,5 @@ python test.py --name xl_landscape-0422 \
                 --no_instance \
                 --crop_size 512 \
                 --load_size 512 \
-
+                --preprocess_mode resize_and_crop \
+                --use_vae
