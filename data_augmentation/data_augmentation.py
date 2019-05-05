@@ -99,6 +99,13 @@ if __name__ == "__main__":
         if 154 in cur_labels_id and 177 in cur_labels_id:  # sea and water-other exists meanwhile, set them all to sea
             label_map[label_map == 177] = 154
         
+        if 126 in cur_labels_id and 134 in cur_labels_id:  # hill and mountain exists meanwhile, set them all to sea
+            label_map[label_map == 126] = 134
+        
+        if 153 in cur_labels_id and 123 in cur_labels_id:  # grass and sand exists meanwhile, set them all to sea
+            label_map[label_map == 153] = 123
+        
+        
         for ex_labels in exchangeable_labels.keys():
             if semantic2label[ex_labels] in cur_labels_id:
                 for l in exchangeable_labels[ex_labels]:
