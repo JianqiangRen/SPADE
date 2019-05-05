@@ -68,14 +68,14 @@ def intersection(list_a, list_b):
 
 
 exchangeable_labels =  {"sea": ["grass", "floor-wood", "snow", "water-other"],
-                        "grass": ["snow", "sand", "hill", "sea", "water-other"],
+                        "grass": ["snow", "hill", "sea", "water-other"],
                         "clouds": ["sky-other"],
                         "snow": ["grass", "water-other"],
-                        "sand": ["snow", "grass", "floor-wood"],
+                        "sand": ["snow", "grass"],
                         "floor-wood": ["grass", "sea", "water-other", "snow"],
                         "hill": ["mountain", "tree"],
                         "water-other":["grass", "snow"],
-                        "mountain": ["hill", "clouds","sky-other"]
+                        "mountain": ["hill", "clouds","sky-other","sky"]
                         }
 
 if __name__ == "__main__":
