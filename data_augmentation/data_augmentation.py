@@ -12,7 +12,7 @@ import shutil
 
 
 input_labels_path = "datasets/xl_landscope/val_label"
-output_labels_path = "datasets/xl_landscope/new_val_label"
+output_labels_path = "datasets/xl_landscope/aug_val_label"
 
 
 def create_dir(path):
