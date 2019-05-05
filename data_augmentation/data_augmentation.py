@@ -96,6 +96,9 @@ if __name__ == "__main__":
         label_map = cv2.imread(label_map_dir, -1)
         cur_labels_id = np.unique(label_map)
         
+        if 154 in cur_labels_id and 177 in cur_labels_id:  # sea and water-other exists meanwhile, set them all to sea
+            label_map[label_map == 177] = 154
+        
         for ex_labels in exchangeable_labels.keys():
             if semantic2label[ex_labels] in cur_labels_id:
                 for l in exchangeable_labels[ex_labels]:
