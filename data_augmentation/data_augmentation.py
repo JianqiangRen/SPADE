@@ -75,7 +75,7 @@ exchangeable_labels =  {"sea": ["grass", "floor-wood", "snow", "water-other"],
                         "floor-wood": ["grass", "sea", "water-other", "snow"],
                         "hill": ["mountain", "tree"],
                         "water-other":["grass", "snow"],
-                        "mountain": ["hill", "clouds","sky-other","sky"]
+                        "mountain": ["hill", "clouds","sky-other"]
                         }
 
 if __name__ == "__main__":
